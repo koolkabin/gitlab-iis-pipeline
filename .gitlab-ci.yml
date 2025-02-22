@@ -1,0 +1,22 @@
+variables:
+  GIT_DEPTH: "1"
+
+stages:
+  - DEPLOY
+
+DEPLOY_job:
+  tags:
+    - ants-live-45-121
+  stage: DEPLOY
+  only:
+    - branches
+  script:
+    - echo "Starting Deployment over POSV1API"
+    - .\stop_app.ps1 "POSV1API"
+    - .\deploy.ps1 "E:\Hosting\ESSENCE\posv1api.essencetechnologies.com"
+    - .\start_app.ps1 "POSV1API"
+
+    - echo "Starting Deployment over BMBhatta"
+    - .\stop_app.ps1 "Essence_BMBhatta"
+    - .\deploy.ps1 "E:\Hosting\ESSENCE\api-bmbhatta.essencetechnologies.com"
+    - .\start_app.ps1 "Essence_BMBhatta"

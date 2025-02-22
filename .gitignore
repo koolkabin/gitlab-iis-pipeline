@@ -1,0 +1,13 @@
+www\web.config
+www/web.config
+www/ConnectionStrings.config
+www\ConnectionStrings.config
+www/private/
+www\appsettings.json
+www\appsettings.Development.json
+www/appsettings.json
+www/appsettings.Development.json
+
+#https://gitlab.com/expensemgmt/pub-posv1-webapi.git
+
+
